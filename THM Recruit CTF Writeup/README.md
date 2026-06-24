@@ -10,6 +10,48 @@ This was my first intermediate challenge on TryHackMe, however it was fairly str
 
 ---
 
+## Attack overview
+
+```mermaid
+flowchart LR
+    A["Target\nTryHackMe machine"] --> B
+
+    subgraph recon ["Reconnaissance"]
+        B["nmap -sV\n3 ports open"]
+    end
+
+    B --> C
+
+    subgraph enum ["Enumeration"]
+        C["Feroxbuster\nrecursive dir scan"]
+        C --> D["/mail directory\ncredential hint found"]
+    end
+
+    D --> E
+
+    subgraph lfi ["LFI - user flag"]
+        E["cv= parameter\nlocal file inclusion"]
+        E --> F["config.php leaked\nusername + password"]
+        F --> G["User flag captured"]
+    end
+
+    G --> H
+
+    subgraph sqli ["SQLi - admin flag"]
+        H["Login page\nvulnerable to SQLi"]
+        H --> I["UNION SELECT\n4 columns confirmed"]
+        I --> J["information_schema\nusers table dumped"]
+        J --> K["Admin flag captured"]
+    end
+
+    style recon fill:#f5f0ff,stroke:#8b5cf6,color:#3c1f7a
+    style enum fill:#e8f4fd,stroke:#2980b9,color:#1a3a4f
+    style lfi fill:#e8fdf4,stroke:#059669,color:#064e3b
+    style sqli fill:#fef3e2,stroke:#e67e22,color:#7d4000
+    style G fill:#e8fdf4,stroke:#059669,color:#064e3b
+    style K fill:#fde8e8,stroke:#c0392b,color:#7b0000
+```
+
 ## Initial Reconnaissance
 
 First and foremost, we want to verify if the target is accessible.
