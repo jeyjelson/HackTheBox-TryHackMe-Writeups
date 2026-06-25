@@ -1,4 +1,4 @@
-# Hack The Box - SQL Injection Box | Write-up
+# Hack The Box - Validation | Write-up
 
 > **Platform:** Hack The Box &nbsp;•&nbsp; **Category:** SQL Injection &nbsp;•&nbsp; **Difficulty:** Easy
 >
