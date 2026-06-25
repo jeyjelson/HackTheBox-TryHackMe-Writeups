@@ -13,7 +13,7 @@ This was my first fully successful box at HackTheBox. I often find the boxes to 
 ## Attack Overview
 ```mermaid
 flowchart TD
-    A["🔍 Reconnaissance\nNmap scan · HTTP port found"]:::enum
+    A[" Reconnaissance\nNmap scan · HTTP port found"]:::enum
 
     A --> B & C
 
