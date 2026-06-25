@@ -1,4 +1,4 @@
-# TryHackMe - West Tech Ransomware Incident | Write-up
+# TryHackMe - ContAInmet CTF | Write-up
 
 > **Platform:** TryHackMe &nbsp;•&nbsp; **Category:** Incident Response / AI Security &nbsp;•&nbsp; **Difficulty:** Medium
 >
@@ -21,6 +21,45 @@ The exercise asks us to figure out how the attacker got onto the workstation, tr
 - **AI IR Assistant:** `http://10.114.163.24:7860` (a local LLM tool with direct file system access for log analysis)
 
 ---
+## Assessment Overview
+
+## Assessment Overview
+
+```mermaid
+flowchart TD
+    A["SSH into workstation<br/>10.114.163.24"] --> B["Recon home directory"]
+
+    B --> C1["qwen-output<br/>empty"]
+    B --> C2["westtech_projects_encrypted.zip<br/>password locked"]
+    B --> C3["Desktop/pwned.txt<br/>ransom note"]
+
+    C3 --> D["Visit AI IR Assistant<br/>:7860"]
+
+    D --> E1["pcap_file_reassembler"]
+    D --> E2["phishing_email_detector"]
+    D --> E3["liberty_prime"]
+
+    E2 --> F["Identify phishing email<br/>invoice_payload.scr"]
+    E1 --> G["Merge 17th June pcaps<br/>mergecap"]
+    G --> H["Feed merged pcap to AI<br/>structured prompt"]
+
+    F --> M
+    H --> M["Check qwen-output<br/>prompt injection log"]
+
+    M --> N["Leaked string<br/>westtechvictim1"]
+    N --> O["Crack encrypted zip"]
+    C2 --> O
+
+    O --> P["thm_flags.txt + guide"]
+    P --> E3
+    E3 --> R(["Root flag:<br/>thm{23,82,20,17,53}"])
+
+    style A fill:#74c0fc,color:#000
+    style C3 fill:#ff6b6b,color:#fff
+    style M fill:#ffa94d,color:#000
+    style N fill:#ffa94d,color:#000
+    style R fill:#51cf66,color:#000
+```
 
 ## Initial Access
 
