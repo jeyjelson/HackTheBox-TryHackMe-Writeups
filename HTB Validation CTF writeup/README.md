@@ -11,6 +11,44 @@ This was my first fully successful box at HackTheBox. I often find the boxes to 
 ---
 
 ## Attack Overview
+```mermaid
+flowchart TD
+    A["🔍 Reconnaissance\nNmap scan · HTTP port found"]:::enum
+
+    A --> B & C
+
+    B[" Login page\nName input field"]:::enum
+    C[" Login page\nCountry dropdown"]:::enum
+
+    B -->|No SQL error\npayload reflected| D
+    C -->|Edited via\nBurp Suite| E
+
+    D[" Name input\nnot injectable"]:::dead
+    E[" SQL error\ntriggered"]:::inject
+
+    E --> F
+    F[" Column enumeration\nUNION SELECT NULL · 1 column confirmed"]:::inject
+
+    F --> G
+    G[" Web shell written\nUNION SELECT INTO OUTFILE"]:::exploit
+
+    G --> H & I
+
+    H[" User flag\ncat /home/htb/user.txt"]:::obj
+    I["Reverse shell\nNetcat · curl trigger"]:::exploit
+
+    I --> J
+    J[" Config file\nCredentials found"]:::exploit
+
+    J --> K
+    K["Root flag\nsu - · /root/root.txt"]:::obj
+
+    classDef enum    fill:#D3D1C7,stroke:#5F5E5A,color:#2C2C2A
+    classDef inject  fill:#CECBF6,stroke:#534AB7,color:#26215C
+    classDef exploit fill:#F5C4B3,stroke:#993C1D,color:#4A1B0C
+    classDef obj     fill:#9FE1CB,stroke:#0F6E56,color:#04342C
+    classDef dead    fill:#FCEBEB,stroke:#A32D2D,color:#501313
+```
 
 ### Reconnaissance
 
