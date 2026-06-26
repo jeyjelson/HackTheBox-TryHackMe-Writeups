@@ -21,7 +21,6 @@ The exercise asks us to figure out how the attacker got onto the workstation, tr
 - **AI IR Assistant:** `http://10.114.163.24:7860` (a local LLM tool with direct file system access for log analysis)
 
 ---
-## Assessment Overview
 
 ## Assessment Overview
 
