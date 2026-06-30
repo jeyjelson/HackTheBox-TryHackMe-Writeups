@@ -12,6 +12,26 @@ This is a session hijacking challenge, and the objective of this lab is to use b
 - **My IP:** `10.10.14.88`
 
 ---
+## Attack Overview
+```mermaid
+flowchart TD
+    A([Start]) --> B[Submit dummy details]
+    B --> C{Reflected back?}
+    C -->|No, admin reviews| D[Confirmed blind XSS]
+    D --> E{Test each field}
+    E -->|Email / others fail| E
+    E -->|imgurl callback| F[Vulnerable field found]
+    F --> G[Host script.js to steal cookie]
+    G --> H[Cookie saved to cookies.txt]
+    H --> I[Inject cookie in dev tools]
+    I --> J([Flag captured])
+
+    style A fill:#1D9E75,stroke:#0F6E56,color:#fff
+    style J fill:#D85A30,stroke:#993C1D,color:#fff
+    style C fill:#3C3489,stroke:#7F77DD,color:#fff
+    style E fill:#3C3489,stroke:#7F77DD,color:#fff
+    style F fill:#085041,stroke:#1D9E75,color:#fff
+```
 
 ## Reconnaissance
 
