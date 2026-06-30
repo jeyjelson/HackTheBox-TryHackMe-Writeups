@@ -12,7 +12,36 @@ The goal of this exercise was to use cross-site scripting on a vulnerable applic
 - **My IP:** `10.10.14.88`
 
 ---
+## Attack Overview
 
+```mermaid
+flowchart TD
+    A([Start]) --> B[Nmap scan]
+    B --> C[phishing page]
+
+    C --> D{XSS testing}
+    D -->|script tag fails| E[Inspect element]
+    D -->|img src found| F[Craft onerror payload]
+    E --> F
+
+    F --> G{Form injection}
+    G --> H[document.write login form]
+    G --> I[Remove urlform]
+    H & I --> J[Phishing page live]
+
+    J --> K{Harvest}
+    K --> L[Netcat on port 8080]
+    K --> M[Send via send.php]
+    L & M --> N([Credentials captured])
+
+    style A fill:#4a0080,color:#fff
+    style N fill:#006400,color:#fff
+    style D fill:#00008b,color:#fff
+    style G fill:#00008b,color:#fff
+    style K fill:#00008b,color:#fff
+    style F fill:#8b0000,color:#fff
+    style J fill:#8b4500,color:#fff
+```
 ## Reconnaissance
 
 First I ran an Nmap scan to see where our target website was being hosted and whether we could retrieve any further information for this exercise.
