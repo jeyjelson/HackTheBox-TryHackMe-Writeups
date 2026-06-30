@@ -8,7 +8,8 @@ My write-ups for the boxes and challenges I've worked through - how I enumerated
 | [Nessus Vulnerability Assessment](./HTB%20Nessus%20Vulnerability%20Assessment) | HTB Academy | Easy | Authenticated vulnerability scanning |
 | [Validation](./HTB%20Validation%20CTF%20writeup/README.md) | HTB Labs | Easy | SQL injection, web shell, privilege escalation |
 | [ContAInment](./ContAInment%20THM%20CTF%20writeup) | TryHackMe | Intermediate | Phishing analysis, PCAP forensics, prompt injection, LLM exploitation |
-|[XSS Phishing](./HTB%20XSS%20Phishing%20CTF%20writeup) | HTB Academy | Easy | Cross-site scripting, phishing form injection, credential harvesting |
+|[XSS Phishing](./HTB%20XSS%20Phishing%20CTF%20writeup) | HTB Academy | Intermediate | Cross-site scripting, phishing form injection, credential harvesting |
+| [Session Hijacking](./HTB%20Session%20Hijacking%20CTF%20writeup) | HTB Academy | Intermediate | Blind XSS, cookie theft, session hijacking |
 
 
 
