@@ -12,6 +12,15 @@ This is a session hijacking challenge, and the objective of this lab is to use b
 - **My IP:** `10.10.14.88`
 
 ---
+## What I Learned
+
+- How to identify a blind XSS, where your payload isn't reflected back to you but is instead reviewed by an admin in a panel you don't have access to
+- How to find the vulnerable field by pointing a payload at each field name and watching which one triggers a callback on my listener
+- How to steal a session cookie by hosting a script that sends document.cookie back to my server
+- How to hijack a session by injecting the stolen cookie into the browser's storage to log in as the victim without their credentials
+
+---
+
 ## Attack Overview
 ```mermaid
 flowchart TD
