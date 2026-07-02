@@ -22,6 +22,16 @@ The exercise asks us to figure out how the attacker got onto the workstation, tr
 
 ---
 
+## What I Learned
+
+- An AI assistant with file system access is a serious attack surface, the same model doing your log analysis can also be holding sensitive employee data that comes out if someone frames the request the right way
+- A prompt injection doesn't have to be a direct ask, the attacker got blocked twice but succeeded the moment they dressed it up as legitimate incident response
+- .scr files are Windows screensaver executables, not a real invoice format, and they're a common way to sneak malware in, so that attachment was a red flag not something to open
+- mergecap from the Wireshark suite lets you combine a load of separate pcap files into one before analysing them
+- Structuring a prompt with Instruction, Context, Format and Constraints was the difference between the chatbot wandering off and actually doing the analysis I wanted
+
+---
+
 ## Assessment Overview
 
 ```mermaid
@@ -228,16 +238,6 @@ thm{23,82,20,17,53}
 ```
 
 And just like that, the box was fully pwned.
-
----
-
-## Takeaways
-
-A few things stood out from this one:
-
-- AI assistants with file system access are a huge attack surface. The `phishing_email_detector` and `pcap_file_reassembler` tools were great for analysis, but the same model also held employee memory that could be coaxed out with the right framing.
-- The attacker did not even need a 0-day. They used a `.scr` attachment in a typosquatted phishing email for initial access, then social-engineered the AI for the data they needed for extortion.
-- Prompt engineering using the Instruction / Context / Format / Constraints structure was the difference between the chatbot wandering and the chatbot actually doing the analysis I wanted.
 
 ---
 
