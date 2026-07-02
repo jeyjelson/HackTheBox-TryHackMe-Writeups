@@ -10,6 +10,14 @@ This was my first fully successful box at HackTheBox. I often find the boxes to 
 
 ---
 
+## What I Learned
+
+- UNION SELECT NULL,NULL,NULL is a better way to find the number of columns than UNION SELECT 1,2,3, since the NULLs avoid data type mismatch errors and give a better chance of the injection working, I picked this up recently from PortSwigger
+- Not to assume the column count from habit, I went in expecting multiple columns and tried up to 7 NULLs before realising it was actually just 1
+- A dropdown that you can't edit in the browser can still be tampered with using Burp Suite to trigger an SQL error
+
+---
+
 ## Attack Overview
 ```mermaid
 flowchart TD
