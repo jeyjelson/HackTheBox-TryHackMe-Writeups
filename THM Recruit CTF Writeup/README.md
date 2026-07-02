@@ -9,6 +9,14 @@
 This was my first intermediate challenge on TryHackMe, however it was fairly straightforward and the methodology for the process was easy compared to other HackTheBox labs. The recommended time was 60 minutes, but it took maybe 30-45 minutes to complete. The exercise focuses on basic enumeration to retrieve the user flag and simple SQL injection to retrieve the admin flag.
 
 ---
+## What I Learned
+
+- feroxbuster recursively enumerates into the directories it finds with a single command, giving a better sitemap than a single-level enumeration
+- the cv parameter only allowed local files, so I had to point it at a local file path to make the LFI work
+- LFI could be used to read config.php and reveal the login credentials
+- How to do an error-based in-band SQL injection
+
+---
 
 ## Attack overview
 
