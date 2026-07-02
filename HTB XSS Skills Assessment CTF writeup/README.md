@@ -17,6 +17,28 @@ In this assessment we are performing a web application penetration testing task 
 - That PHP's built in server with `php -S 0.0.0.0:8080` acts like a proper web server, so it can serve script.js and stay running to catch multiple requests
 
 ---
+## Attack Overview
+```mermaid
+flowchart TD
+    Start([Security Blog]):::start --> Test{Test input<br/>fields}:::decision
+
+    Test -->|comment| B1[script tag<br/>stripped]:::blocked
+    Test -->|search bar| B2[no callback]:::blocked
+    Test -->|**url field**| V[**Vulnerable**<br/>blind XSS]:::good
+
+    V --> CB[Netcat callback<br/>received]:::good
+    CB --> Serve{Serve<br/>script.js}:::decision
+    Serve -->|netcat| F[fails, not a<br/>web server]:::blocked
+    Serve -->|**php -S**| P[serves script]:::good
+    F -.switch.-> P
+    P --> Flag([Cookie stolen<br/>Flag captured]):::flag
+
+    classDef start fill:#1e293b,stroke:#475569,color:#e2e8f0
+    classDef decision fill:#1e3a5f,stroke:#3b82f6,color:#dbeafe
+    classDef blocked fill:#3f1d2e,stroke:#e11d48,color:#fecdd3
+    classDef good fill:#14342b,stroke:#10b981,color:#d1fae5
+    classDef flag fill:#14342b,stroke:#10b981,color:#d1fae5,stroke-width:2px
+```
 
 ## Reconnaissance
 
