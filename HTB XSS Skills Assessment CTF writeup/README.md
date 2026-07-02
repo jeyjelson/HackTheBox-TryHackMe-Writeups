@@ -1,6 +1,6 @@
 # XSS - Cross Site Scripting
 
-> **Category:** Web Application Penetration Testing &nbsp;•&nbsp; **Vulnerability:** Cross-Site Scripting (XSS) &nbsp;•&nbsp; **Author:** Jithin Jelson **Difficulty:** Easy/Medium
+> **Category:** Web Application Penetration Testing &nbsp;•&nbsp; **Vulnerability:** Cross-Site Scripting (XSS) &nbsp;•&nbsp; **Author:** Jithin Jelson &nbsp;•&nbsp;**Difficulty:** Easy/Medium
 
 In this assessment we are performing a web application penetration testing task for a company that has hired us, they have just released their security blog, in our web app penetration testing we have reached the part where we must test the web application against cross-site scripting vulnerabilities. The instructions we have been given is to identify a user input field that is vulnerable to an xss vulnerability in the assessment directory, find a working xss payload that executes javascript code on the targets browser and use session hijacking techniques to steal the victims cookies which contains the flag.
 
