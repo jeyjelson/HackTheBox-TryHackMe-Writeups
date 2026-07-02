@@ -12,6 +12,14 @@ The goal of this exercise was to use cross-site scripting on a vulnerable applic
 - **My IP:** `10.10.14.88`
 
 ---
+
+## What I Learned
+
+- What inspect element shows you isn't always what you type in, the panel showed double quotes so I used double quotes and it failed, but when I used single quotes it worked and inspect then displayed them as double quotes anyway
+- document.write() lets you inject your own login form, and remove() gets rid of the original one so it looks clean
+- Because I was running on a Hack The Box pwnbox, something was already using port 80, which is probably why it wasn't free for my PHP script
+
+---
 ## Attack Overview
 
 ```mermaid
