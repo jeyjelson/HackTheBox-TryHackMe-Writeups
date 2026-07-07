@@ -162,7 +162,7 @@ We can then find the rule ID in the rule.mitre.id section.
 ## Wazuh logs: decoding the PowerShell command
 
 > Download the "logs-wazuh.zip" file from resources, and identify the suspicious PowerShell command in the logs. Type the suspicious IP address after decoding the command.
-> **Answer:** `192.168.100.24`
+> **Answer:** `198.51.100.24`
 
 When we analyse the file, there is only one clear suspicious PowerShell command in the logs, we can see this down below.
 
