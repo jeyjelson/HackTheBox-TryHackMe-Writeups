@@ -21,6 +21,60 @@ The goal of this exercise was to practice a realistic end-to-end IR workflow:
 - **TheHive accessed at:** `10.129.7.175:9000`
 - **Credentials provided:** `htb-analyst / P3n#31337@LOG`
 
+
+## Assessment Overview
+
+```mermaid
+flowchart LR
+    A[Admin login via<br/>ManageEngine Web Console]
+
+    A --> B1[203.0.113.18]
+    A --> B2[198.51.100.24]
+
+    B1 --> C1[VirusTotal:<br/>MangoJava.exe]
+    B2 --> C2[Whois:<br/>Los Angeles]
+
+    C1 --> D{MITRE ATT&CK<br/>Mapping}
+    C2 --> D
+
+    D --> E1[Ingress Tool<br/>Transfer<br/>T1105]
+    D --> E2[Credential Access<br/>VaultCli.dll<br/>T1555]
+
+    E1 --> F[Obfuscated PowerShell<br/>Base64 encoded]
+    E2 --> F
+
+    F --> G[Decoded payload<br/>downloads from<br/>198.51.100.24]
+
+    G --> H[Responsible user<br/>CORP\svc-update]
+
+    classDef entry fill:#1d4ed8,stroke:#1e3a8a,color:#ffffff;
+    classDef ioc fill:#0f766e,stroke:#134e4a,color:#ffffff;
+    classDef intel fill:#7c3aed,stroke:#5b21b6,color:#ffffff;
+    classDef mitre fill:#b45309,stroke:#78350f,color:#ffffff;
+    classDef payload fill:#be123c,stroke:#881337,color:#ffffff;
+    classDef user fill:#15803d,stroke:#14532d,color:#ffffff;
+
+    class A entry;
+    class B1,B2 ioc;
+    class C1,C2 intel;
+    class D,E1,E2 mitre;
+    class F,G payload;
+    class H user;
+
+    linkStyle default stroke-width:2px
+```
+---
+
+## What I Learned
+
+- How to run a full incident response workflow in TheHive, keeping alerts, evidence and findings tied to one case so nothing gets lost.
+- Pivoting a suspicious IP and enrich it in VirusTotal, turning a single indicator into files, Whois data and a clearer picture of the attacker's activity.
+- How to map observed behaviour to the MITRE ATT&CK framework and identify the correct technique IDs.
+- Spotting and decoding a Base64 encoded PowerShell command to reveal the real payload and its callout IP.
+- How to read raw event logs to trace an action back to the responsible user account (CORP\svc-update).
+- That log analysis, threat intelligence and framework mapping all feed into the same investigation, and I'm more confident pulling them together now.
+---
+
 We can access TheHive with the IP address provided and enter the credentials given to us.
 
 ![TheHive login page](images/01-thehive-login.png)
@@ -108,6 +162,7 @@ We can then find the rule ID in the rule.mitre.id section.
 ## Wazuh logs: decoding the PowerShell command
 
 > Download the "logs-wazuh.zip" file from resources, and identify the suspicious PowerShell command in the logs. Type the suspicious IP address after decoding the command.
+> **Answer:** `192.168.100.24`
 
 When we analyse the file, there is only one clear suspicious PowerShell command in the logs, we can see this down below.
 
