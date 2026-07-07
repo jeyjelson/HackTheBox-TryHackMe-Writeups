@@ -17,6 +17,7 @@ My write-ups for the boxes and challenges I've worked through - how I enumerated
 | Box | Platform | Difficulty | Key techniques |
 |-----|----------|------------|----------------|
 | [Nessus Vulnerability Assessment](./HTB%20Nessus%20Vulnerability%20Assessment) | HTB Academy | Easy | Authenticated vulnerability scanning |
+| [Incident Handling](./HTB%20Incident%20Handling%20Write-up/README.md) | HTB Academy | Skills Assessment | TheHive triage, VirusTotal enrichment, MITRE ATT&CK mapping, Base64 PowerShell decoding |
 
 ## AI Security
 
