@@ -16,33 +16,56 @@ Headless is a fairly straightforward Linux box in which a customer support form 
 
 ```mermaid
 flowchart LR
-    A["Nmap<br/>22 SSH<br/>5000 HTTP"] --> B["ffuf<br/>/support<br/>/dashboard"]
-    B --> C["Accept-Encoding<br/>XSS"]
-    C --> D["Blind XSS<br/>cookie stealer"]
-    D --> E["Steal admin<br/>cookie"]
-    E --> F["Administrator<br/>Dashboard"]
-    F --> G["Command<br/>injection"]
-    G --> H["user.txt"]
-    G --> I["Reverse shell<br/>as dvir"]
-    I --> J["sudo -l<br/>/usr/bin/syscheck"]
-    J --> K["Relative path<br/>./initdb.sh"]
-    K --> L["root.txt"]
+    subgraph P1["Recon"]
+        direction TB
+        A["Nmap<br/>22 · 5000"] --> B["ffuf"]
+    end
 
-    classDef entry fill:#1d4ed8,stroke:#1e3a8a,color:#ffffff;
-    classDef recon fill:#0f766e,stroke:#134e4a,color:#ffffff;
+    subgraph P2["Foothold"]
+        direction TB
+        S["/support form"]
+        F1["Form fields<br/>blocked"]
+        F2["Accept-Encoding<br/>XSS"]
+        BX["Blind XSS<br/>cookie theft"]
+        S --> F1
+        S --> F2 --> BX
+    end
+
+    subgraph P3["Access"]
+        direction TB
+        CK["Stolen admin<br/>cookie"] --> DASH["Admin dashboard"]
+    end
+
+    subgraph P4["Exploit"]
+        direction TB
+        CI["Command injection"]
+        CI --> U["user.txt"]
+        CI --> RS["Reverse shell<br/>dvir"]
+    end
+
+    subgraph P5["Root"]
+        direction TB
+        SL["sudo -l<br/>syscheck"] --> RP["./initdb.sh<br/>hijack"] --> R["root.txt"]
+    end
+
+    B --> S
+    BX --> CK
+    DASH --> CI
+    RS --> SL
+
+    classDef recon fill:#1d4ed8,stroke:#1e3a8a,color:#ffffff;
     classDef xss fill:#7c3aed,stroke:#5b21b6,color:#ffffff;
     classDef access fill:#b45309,stroke:#78350f,color:#ffffff;
     classDef exploit fill:#be123c,stroke:#881337,color:#ffffff;
-    classDef root fill:#15803d,stroke:#14532d,color:#ffffff;
+    classDef root fill:#a16207,stroke:#713f12,color:#ffffff;
+    classDef dead fill:#475569,stroke:#1e293b,color:#ffffff;
 
-    class A entry;
-    class B recon;
-    class C,D xss;
-    class E,F access;
-    class G,H,I exploit;
-    class J,K exploit;
-    class L root;
-    linkStyle default stroke-width:2px
+    class A,B recon;
+    class S,F2,BX xss;
+    class F1 dead;
+    class CK,DASH access;
+    class CI,U,RS exploit;
+    class SL,RP,R root;
 ```
 
 ---
