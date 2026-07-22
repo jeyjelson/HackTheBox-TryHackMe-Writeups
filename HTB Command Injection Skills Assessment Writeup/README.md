@@ -1,6 +1,6 @@
 # Hack The Box Academy - Command Injection Skills Assessment | Write-up
 
-> **Platform:** Hack The Box Academy &nbsp;•&nbsp; **Category:** Web Attacks / Command Injection &nbsp;•&nbsp; **Difficulty:** Skills Assessment
+> **Platform:** Hack The Box Academy &nbsp;•&nbsp; **Category:** Web Attacks / Command Injection &nbsp;•&nbsp; **Difficulty:** Easy
 >
 > **Author:** Jithin Jelson
 
