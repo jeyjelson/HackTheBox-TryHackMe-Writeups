@@ -13,7 +13,7 @@ My write-ups for the boxes and challenges I've worked through - how I enumerated
 | [XSS Skills Assessment](./HTB%20XSS%20Skills%20Assessment%20CTF%20writeup) | HTB Academy | Intermediate | Blind XSS, cookie theft, session hijacking |
 | [Headless](./HTB%20Headless%20CTF%20Writeup) | HTB Labs | Easy | Header-based XSS, blind XSS cookie theft, command injection, relative-path privilege escalation
 | [Command Injection Skills Assessment](./HTB%20Command%20Injection%20Skills%20Assessment%20Writeup) | HTB Academy | Easy | Command injection, filter bypass, ${IFS} and ${PATH:0:1} obfuscation, path traversal |
-| [SSRF Skills Assessment](./HTB%20SSRF%20Skills%20Assessment%20Writeup/README.md) | HTB Academy | Easy | SSRF, internal port scanning with ffuf, localhost trust abuse |
+| [SSRF Skills Assessment](./HTB%20In-BandSSRF%20Skills%20Assessment%20Writeup/README.md) | HTB Academy | Easy | SSRF, internal port scanning with ffuf, localhost trust abuse |
 
 ## Defensive Security
 
