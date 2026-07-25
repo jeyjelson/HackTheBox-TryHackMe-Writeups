@@ -1,6 +1,6 @@
 # Hack The Box Academy - Exploiting SSRF using Gopher | Write-up
 
-> **Platform:** Hack The Box Academy &nbsp;•&nbsp; **Category:** Server-side Attacks &nbsp;•&nbsp; **Difficulty:** Easy &nbsp;•&nbsp; **Time taken:** <fill in>
+> **Platform:** Hack The Box Academy &nbsp;•&nbsp; **Category:** Server-side Attacks &nbsp;•&nbsp; **Difficulty:** Easy &nbsp;•&nbsp; **Time taken:** 15 mins
 >
 > **Author:** Jithin Jelson
 
@@ -19,27 +19,27 @@ Target IP: `10.129.124.157`
 ```mermaid
 flowchart LR
     A[Target web app]
-
+ 
     A --> B[Availability field<br/>known SSRF]
     B --> C[Intercept in Burp]
-
+ 
     C --> D[Point at a file<br/>that does not exist<br/>on localhost]
     D --> E[Learn the error<br/>Server at dateserver.htb<br/>Port 80]
-
+ 
     E --> F[ffuf directory enum<br/>filter -fr on error string]
     F --> G[404 + 403<br/>filtered out]
-    F --> H[/admin.php<br/>endpoint found]
-
+    F --> H["admin.php<br/>endpoint found"]
+ 
     H --> I[Access admin via SSRF]
     I --> J[Flag already present<br/>no gopher needed]
-
+ 
     classDef entry fill:#1d4ed8,stroke:#1e3a8a,color:#ffffff;
     classDef intel fill:#7c3aed,stroke:#5b21b6,color:#ffffff;
     classDef ioc fill:#0f766e,stroke:#134e4a,color:#ffffff;
     classDef payload fill:#b45309,stroke:#78350f,color:#ffffff;
     classDef loot fill:#be123c,stroke:#881337,color:#ffffff;
     classDef user fill:#15803d,stroke:#14532d,color:#ffffff;
-
+ 
     class A entry;
     class B,C intel;
     class D,E ioc;
@@ -49,6 +49,7 @@ flowchart LR
     class J user;
     linkStyle default stroke-width:2px
 ```
+
 
 ---
 
