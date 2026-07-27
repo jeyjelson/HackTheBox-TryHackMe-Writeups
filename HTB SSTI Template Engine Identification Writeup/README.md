@@ -25,19 +25,6 @@ flowchart LR
 
     D --> E["Decision Tree<br/>${7*7}"]
 
-    E -->|"green"| F["a{*comment*}b"]
-    E -->|"red"| G["{{7*7}}"]
-
-    F -->|"green"| H["Smarty"]
-    F -->|"red"| I["$'z'.join('ab')"]
-    I -->|"green"| J["Mako"]
-    I -->|"red"| K["Unknown"]
-
-    G -->|"red"| L["Not vulnerable"]
-    G -->|"green"| M["{{7*'7'}}"]
-    M -->|"green"| N["Jinja2<br/>result: 7777777"]
-    M -->|"green"| O["Twig<br/>result: 49"]
-    M -->|"red"| P["Unknown"]
 
     classDef entry fill:#1d4ed8,stroke:#1e3a8a,color:#ffffff;
     classDef recon fill:#0f766e,stroke:#134e4a,color:#ffffff;
