@@ -25,6 +25,7 @@ My write-ups for the boxes and challenges I've worked through - how I enumerated
 | [Validation](./HTB%20Validation%20CTF%20writeup/README.md) | HTB Labs | Easy | SQL injection, web shell, privilege escalation |
 | [Command Injection Skills Assessment](./HTB%20Command%20Injection%20Skills%20Assessment%20Writeup/README.md) | HTB Academy | Easy | Command injection, filter bypass, ${IFS} and ${PATH:0:1} obfuscation, path traversal |
 | [Identifying Template Engine for SSTI](./HTB%20SSTI%20Template%20Engine%20Identification%20Writeup/README.md) | HTB Academy | Easy | SSTI, template engine fingerprinting, decision-tree payload testing, Twig vs Jinja2 identification |
+| [SSTI Exploitation Jinja2 Flask](./HTB%20SSTI%20Exploitation%20Jinja2%20Flask%20CTF%20Writeup/README.md) | Hack The Box | Easy | Jinja2 SSTI, config.items disclosure, __builtins__ enumeration, LFI via open, os.popen RCE |
 ## Defensive Security
 | Box | Platform | Difficulty | Key techniques |
 |-----|----------|------------|----------------|
