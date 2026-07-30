@@ -1,4 +1,4 @@
-# TryHackMe & HackTheBox Write-Ups
+# Security Lab & CTF Write-Ups
 My write-ups for the boxes and challenges I've worked through - how I enumerated, what I exploited, and how I got root. Each one walks through the full process with screenshots and an attack-path diagram.
 
 ## Offensive Security
