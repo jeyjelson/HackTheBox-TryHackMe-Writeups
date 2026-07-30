@@ -17,10 +17,11 @@ My write-ups for the boxes and challenges I've worked through - how I enumerated
 | [In-Band SSRF Skills Assessment](./HTB%20In-Band%20SSRF%20Skills%20Assessment%20Writeup/README.md) | HTB Academy | Easy | SSRF, internal port scanning with ffuf, localhost trust abuse |
 | [Basic SSRF Against Another Back-End System](./PortSwigger%20Basic%20SSRF%20Against%20Another%20Back-End%20System%20Lab%20Writeup/README.md) | PortSwigger | Apprentice | SSRF, Burp Intruder, internal network scanning, Repeater |
 | [SSRF with Blacklist-Based Input Filter](./PortSwigger%20SSRF%20with%20Blacklist-Based%20Input%20Filter%20Lab%20Writeup/README.md) | PortSwigger | Practitioner | SSRF, Burp Repeater, IP obfuscation (127.1 / decimal / octal), case-variation filter bypass |
+| [SSRF with Whitelist-Based Input Filter](./PortSwigger%20SSRF%20with%20Whitelist-Based%20Input%20Filter%20Lab%20Writeup/README.md) | PortSwigger | Expert | SSRF, Burp Repeater, URL parser confusion, embedded credentials (user@host), fragment (#) smuggling, double URL encoding (%2523) |
 | [SSRF Enumeration Skills Assessment](./HTB%20SSRF%20Enumeration%20Skills%20Assessment%20Writeup/README.md) | HTB Academy | Easy | SSRF directory enumeration with ffuf, Apache error filtering, internal admin access |
 | [Blind SSRF Enumeration](./HTB%20Blind%20SSRF%20Skills%20Assessment%20Writeup/README.md) | HTB Academy | Easy | Blind SSRF, dateserver parameter abuse, ffuf port fuzzing, internal loopback enumeration |
 | [Server-Side Attacks Skills Assessment](./HTB%20Server-Side%20Attacks%20Skills%20Assessment%20Writeup/README.md) | HTB Academy| Intermediate | SSRF, SSTI, Twig RCE, ffuf, Burp Suite |
-| [SSRF with Whitelist-Based Input Filter](./PortSwigger%20SSRF%20with%20Whitelist-Based%20Input%20Filter%20Lab%20Writeup/README.md) | PortSwigger | Expert | SSRF, Burp Repeater, URL parser confusion, embedded credentials (user@host), fragment (#) smuggling, double URL encoding (%2523) |
+
 
 ### Injection
 | Box | Platform | Difficulty | Key techniques |
