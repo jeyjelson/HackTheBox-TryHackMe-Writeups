@@ -20,6 +20,7 @@ My write-ups for the boxes and challenges I've worked through - how I enumerated
 | [SSRF with Whitelist-Based Input Filter](./PortSwigger%20SSRF%20with%20Whitelist-Based%20Input%20Filter%20Lab%20Writeup/README.md) | PortSwigger | Expert | SSRF, Burp Repeater, URL parser confusion, embedded credentials (user@host), fragment (#) smuggling, double URL encoding (%2523) |
 | [SSRF Enumeration Skills Assessment](./HTB%20SSRF%20Enumeration%20Skills%20Assessment%20Writeup/README.md) | HTB Academy | Easy | SSRF directory enumeration with ffuf, Apache error filtering, internal admin access |
 | [Blind SSRF Enumeration](./HTB%20Blind%20SSRF%20Skills%20Assessment%20Writeup/README.md) | HTB Academy | Easy | Blind SSRF, dateserver parameter abuse, ffuf port fuzzing, internal loopback enumeration |
+| [SSRF with Filter Bypass via Open Redirection](./PortSwigger%20SSRF%20with%20Filter%20Bypass%20via%20Open%20Redirection%20Lab%20Writeup/README.md) | PortSwigger | Practitioner | SSRF, Burp Repeater, open redirect discovery, redirect chaining, internal admin access |
 | [Server-Side Attacks Skills Assessment](./HTB%20Server-Side%20Attacks%20Skills%20Assessment%20Writeup/README.md) | HTB Academy| Intermediate | SSRF, SSTI, Twig RCE, ffuf, Burp Suite |
 
 
