@@ -2,7 +2,7 @@
 
 > **Platform:** PortSwigger &nbsp;•&nbsp; **Category:** Web Security / SSRF &nbsp;•&nbsp; **Difficulty:** Practitioner
 >
-> **Target:** `web (lab instance)` &nbsp;•&nbsp; **Time taken:** not recorded
+> **Target:** `web (lab instance)` &nbsp;•&nbsp; **Time taken:** 15 mins
 >
 > **Author:** Jithin Jelson
 
