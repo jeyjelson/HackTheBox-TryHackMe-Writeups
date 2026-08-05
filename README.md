@@ -47,4 +47,3 @@ My write-ups for the boxes and challenges I've worked through - how I enumerated
 |-----|----------|------------|----------------|
 | [ContAInment](./ContAInment%20THM%20CTF%20writeup/README.md) | TryHackMe | Intermediate | Phishing analysis, PCAP forensics, prompt injection, LLM exploitation |
 
-More on the way
