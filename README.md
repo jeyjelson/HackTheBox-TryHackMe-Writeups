@@ -22,6 +22,7 @@ My write-ups for the boxes and challenges I've worked through - how I enumerated
 | [Blind SSRF Enumeration](./HTB%20Blind%20SSRF%20Skills%20Assessment%20Writeup/README.md) | HTB Academy | Easy | Blind SSRF, dateserver parameter abuse, ffuf port fuzzing, internal loopback enumeration |
 | [SSRF with Filter Bypass via Open Redirection](./PortSwigger%20SSRF%20with%20Filter%20Bypass%20via%20Open%20Redirection%20Lab%20Writeup/README.md) | PortSwigger | Practitioner | SSRF, Burp Repeater, open redirect discovery, redirect chaining, internal admin access |
 | [Server-Side Attacks Skills Assessment](./HTB%20Server-Side%20Attacks%20Skills%20Assessment%20Writeup/README.md) | HTB Academy| Intermediate | SSRF, SSTI, Twig RCE, ffuf, Burp Suite |
+| [Blind SSRF with Out-of-Band Detection](./PortSwigger%20Blind%20SSRF%20with%20Out-of-Band%20Detection%20Lab%20Writeup/README.md) | PortSwigger Web Security Academy | Practitioner | Blind SSRF, Burp Collaborator, OAST, Referer header injection |
 
 
 ### Injection
